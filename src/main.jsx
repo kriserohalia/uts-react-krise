@@ -5,7 +5,7 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Intruksi from "./pages/Intruksi.jsx";
 import Beranda from "./pages/Beranda.jsx";
-import Tatatertib from "./pages/TataTertib.jsx";
+import Tatatertib from "./pages/Tatatertib.jsx";
 
 const router = createBrowserRouter([
   {
