@@ -28,7 +28,6 @@ export default function Product({ id, name, image, price, setEditedProduct }) {
           >
             Edit
           </Button>
-          <Button>Beli</Button>
         </div>
       </section>
     </div>

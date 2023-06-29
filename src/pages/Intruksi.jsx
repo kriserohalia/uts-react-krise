@@ -1,8 +1,7 @@
+import {Link} from "react-router-dom"
 export default function Intruksi (){
     return (
         <main>
-            <h1>
-                <p></p>
                 <p>
                     tambah / buat produk dengan dialog : 
                     1. nama 
@@ -10,7 +9,8 @@ export default function Intruksi (){
                     3. url gambar
                     4. kategori
                 </p>
-            </h1>
+            
+            <Link to="/">Kembali ke Beranda</Link>
         </main>
     )
 }

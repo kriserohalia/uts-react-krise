@@ -4,7 +4,9 @@ import Button from "../components/Button";
 import {GrAdd} from "react-icons/gr"
 import {BsFillCartPlusFill} from "react-icons/bs"
 import {MdDelete} from "react-icons/md"
-
+import {MdClose} from "react-icons/md"
+import {AiOutlineMinusCircle } from "react-icons/ai"
+import {AiOutlinePlusCircle} from "react-icons/ai"
 export default function Beranda() {
   const [products, setProducts] = useState([
     {
@@ -233,6 +235,69 @@ export default function Beranda() {
                       ))
                   : "Tidak ada produk ditemukan."}
           </main><footer>
+          {isCartOpen && (
+        <div className="card dialog">
+          <button onClick={() => setIsCartOpen(false)}>
+            <MdClose />
+          </button>
+          <h1>Keranjang</h1>
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nama</th>
+                <th>Harga</th>
+                <th>Tindakan</th>
+              </tr>
+            </thead>
+            <tbody>
+              {cart.map((product) => (
+                <tr key={product.id}>
+                  <td>{product.id}</td>
+                  <td>{product.name}</td>
+                  <td>{product.count.toLocaleString()}</td>
+                  <td>
+                    <button
+                      onClick={() => {
+                        if (product.count > 1) {
+                          
+                          setCart(
+                            cart.map((p) =>
+                              p.id === product.id
+                                ? { ...p, count: p.count - 1 }
+                                : p
+                            )
+                          );
+                        } else {
+                          setCart(cart.filter((p) => p.id !== product.id));
+                        }
+                      }}
+                      title="Kurangi"
+                    >
+                      <AiOutlineMinusCircle />
+                    </button>
+                    <button
+                      onClick={() => {
+                        setCart(
+                          cart.map((p) =>
+                            p.id === product.id
+                              ? { ...p, count: p.count + 1 }
+                              : p
+                          )
+                        );
+                      }}
+                      title="Tambah"
+                    >
+                      <AiOutlinePlusCircle />
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+
             
               <Button onClick={() => setPage(page - 1)} disabled={page === 1}>
                   Sebelumnya

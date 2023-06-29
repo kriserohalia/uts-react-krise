@@ -1,7 +1,7 @@
 export default function Tatatertib(){
-    return (
-        <main>
-            
-        </main>
-    )
+     return (
+            <main>
+              <h1>Tatatertib</h1>
+            </main>
+    );
 }

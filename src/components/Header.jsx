@@ -10,8 +10,8 @@ export default function Header() {
       </Link>
       <nav>
         <NavLink to="/">Beranda</NavLink>
-        <NavLink to="/about">Tata Tertib</NavLink>
-        <NavLink to="/contact">Intruksi</NavLink>
+        <NavLink to="/tatatertib">Tata Tertib</NavLink>
+        <NavLink to="/intruksi">Intruksi</NavLink>
       </nav>
       <button>Login</button>
     </header>
